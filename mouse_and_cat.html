@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng mèo bắt chuột</title>
+</head>
+<body>
+<script>
+    function Mouse(name, weight, speed, status) {
+        this.name = name;
+        this.weight = weight;
+        this.speed = speed;
+        this.status = status;
+
+        this.getName = function () {
+            return this.name;
+        }
+        this.getWeight = function () {
+            return this.weight;
+        }
+        this.getSpeed = function () {
+            return this.speed;
+        }
+        this.getStatus = function () {
+            return this.status;
+        }
+
+        this.setName = function (name) {
+            this.name = name;
+        }
+        this.setWeight = function (weight) {
+            this.weight = weight;
+        }
+        this.setSpeed = function (speed) {
+            this.speed = speed;
+        }
+        this.setStatus = function (speed) {
+            this.status = status;
+        }
+
+        this.sound = function (stringMouse) {
+            if (this.status) {
+                console.log(stringMouse);
+            }
+        }
+    }
+
+    let dong = new Mouse('dong',50,70,true);
+    let long = new Mouse('long',45,30,true);
+    let hoa = new Mouse('hoa',90,75,false);
+
+    function Cat(name, weight, speed,) {
+        this.name = name;
+        this.weight = weight;
+        this.speed = speed;
+        
+        this.getName = function () {
+            return this.name;
+        }
+        this.getWeight = function () {
+            return this.weight;
+        }
+        this.getSpeed = function () {
+            return this.speed;
+        }
+
+        this.setName = function () {
+            this.name = name;
+        }
+        this.setWeight = function () {
+            this.weight = weight;
+        }
+        this.setSpeed = function () {
+            this.speed = speed;
+        }
+
+        this.sound = function (stringCat) {
+            console.log(stringCat);
+        }
+        this.catchMouse = function (mouse) {
+            if (this.speed > mouse.speed) {
+                console.log("Mèo " + this.name + " bắt được chuột " + mouse.name);
+            } else {
+                console.log("Mèo " + this.name + " không bắt được chuột " + mouse.name);
+            }
+        }
+        this.eatMouse = function (mouse) {
+            if (mouse.status) {
+                console.log(this.weight = this.weight + mouse.weight);
+            } else {
+                console.log("Không ăn được");
+            }
+        }
+    }
+
+    let manh = new Cat('manh',100,60);
+    let duy = new Cat('duy',50,100);
+</script>
+</body>
+</html>

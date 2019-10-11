@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rắn và ếch</title>
+</head>
+<body>
+<script>
+    function Frog(name, weight, speed, status) {
+        this.name = name;
+        this.weight = weight;
+        this.speed = speed;
+        this.status = status;
+
+        this.getName = function () {
+            return this.name;
+        }
+        this.getWeight = function () {
+            return this.weight;
+        }
+        this.getSpeed = function () {
+            return this.speed;
+        }
+        this.getStatus = function () {
+            return this.status;
+        }
+
+        this.setName = function (name) {
+            this.name = name;
+        }
+        this.setWeight = function (weight) {
+            this.weight = weight;
+        }
+        this.setSpeed = function (speed) {
+            this.speed = speed;
+        }
+        this.setStatus = function (status) {
+            this.status = status;
+        }
+
+        this.sound = function (soundFrog) {
+            if (this.status) {
+                console.log(soundFrog);
+            }
+        }
+    }
+    function Snake(name, weight, crawl, molting) {
+        this.name = name;
+        this.weight = weight;
+        this.crawl = crawl;
+        this.molting = molting;
+
+        this.getName = function () {
+            return this.name;
+        }
+        this.getWeight = function () {
+            return this.weight;
+        }
+        this.getCrawl = function () {
+            return this.crawl;
+        }
+        this.getMolting = function () {
+            return this.molting;
+        }
+
+        this.setName = function (name) {
+            this.name = name;
+        }
+        this.setWeight = function (weight) {
+            this.weight = weight;
+        }
+        this.setCrawl = function (crawl) {
+            this.crawl = crawl;
+        }
+        this.setMolting = function (molting) {
+            this.molting = molting;
+        }
+
+        this.sound = function (soundSnake) {
+            if (this.status) {
+                console.log(soundSnake);
+            }
+        }
+
+        this.catchFrog = function (frog) {
+            if (this.crawl > frog.speed) {
+                console.log("Rắn " + this.name + " bắt được ếch " + frog.name);
+            } else {
+                console.log("Rắn " + this.name + " không bắt được ếch " + frog.name);
+            }
+        }
+
+        this.eatFrog = function (frog) {
+            if (frog.status) {
+                console.log("Rắn nặng " + (this.weight += frog.weight));
+            }
+        }
+    }
+</script>
+</body>
+</html>
